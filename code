@@ -1,0 +1,39 @@
+todo = []
+
+def add_item(todo, task):
+    todo.append(task)
+    print("Task added")
+
+def remove_item(todo, task):
+    if task in todo:
+        todo.remove(task)
+        print("Task removed")
+    else:
+        print("Task not found")
+
+def view_list(todo):
+    print("Tasks")
+    if todo:
+        for task in todo:
+            print(task)
+    else:
+        print("No tasks")
+
+# Example usage:
+while True:
+    command = input("Enter command: ").lower()
+
+    if command == "exit":
+        break
+    elif command == "add":
+        task_to_add = input("Enter task to add: ")
+        add_item(todo, task_to_add)
+    elif command == "remove":
+        task_to_remove = input("Enter task to remove: ")
+        remove_item(todo, task_to_remove)
+    elif command == "view":
+        view_list(todo)
+    else:
+        print("Invalid command. Try again.")
+
+
